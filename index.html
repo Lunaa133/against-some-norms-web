@@ -1,144 +1,405 @@
 <!DOCTYPE html>
-<html lang="eng">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Societal Nonsense 🐞✨</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No to Norms — Field Guide to Societal Nonsense</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Special+Elite&display=swap" rel="stylesheet">
+
     <style>
+        :root {
+            --bg-olive: #565532;          
+            --mauve-bg: #80606b;         
+            --mauve-border: #422d36;     
+            --flower-color: #ba9fa9;     
+            --cream-text: #f3ebd8;      
+            --star-yellow: #f2cb51;      
+            --star-teal: #75a29a;        
+            --accent-pink: #d97082; 
+        }
+
         body {
-            background-color: #fffdf0;
-            background-image: radial-gradient(#ffdf6d 15%, transparent 16%);
-            background-size: 24px 24px;
-            font-family: 'Comic Sans MS', 'Chalkboard SE', 'Fredoka', cursive, sans-serif;
-            color: #2b2b2b;
+            background-color: var(--bg-olive);
+            color: var(--cream-text);
+            font-family: 'Courier Prime', monospace;
+            min-height: 100vh;
             margin: 0;
-            padding: 40px 20px;
+            padding: 1rem;
             display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+            background-image: radial-gradient(rgba(0,0,0,0.12) 1px, transparent 0);
+            background-size: 14px 14px;
+        }
+
+        .stage-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 50px 30px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
             justify-content: center;
         }
 
-        .notebook-card {
-            background: #ffffff;
-            border: 4px solid #ff477e;
-            border-radius: 25px;
-            max-width: 650px;
+        .mauve-card {
+            position: relative;
             width: 100%;
-            padding: 40px;
-            box-shadow: 8px 8px 0px #ffb703;
-            position: relative;
+            min-height: 480px;
+            background-color: var(--mauve-bg);
+            border: 22px solid var(--mauve-border);
+            border-radius: 4px;
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.45),
+                inset 0 0 60px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 2.2rem 2.5rem;
+            box-sizing: border-box;
+            background-image: 
+                radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0);
+            background-size: 6px 6px;
         }
 
-        .title-badge {
-            background: #ffb703;
-            color: #fff;
-            padding: 12px 20px;
-            border-radius: 15px;
-            text-align: center;
-            font-size: 19px;
-            border: 3px dashed #ff477e;
-            transform: rotate(-1deg);
-            margin-bottom: 25px;
-            box-shadow: 3px 3px 0px rgba(0,0,0,0.1);
-        }
-
-        .pressure-box {
-            background: #fdf2f4;
-            border: 3px solid #ff70a6;
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 20px;
-            position: relative;
-            transition: transform 0.2s ease;
-        }
-
-        .pressure-box:hover {
-            transform: scale(1.01) rotate(0.5deg);
-            background: #fff0f3;
-        }
-
-        .pressure-title {
-            font-size: 16px;
-            color: #d90429;
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
-
-        .pressure-desc {
-            font-size: 15px;
-            color: #495057;
-            line-height: 1.6;
-        }
-
-        .sticker-corner {
+        .mauve-card::before {
+            content: '';
             position: absolute;
-            top: -15px;
-            right: -10px;
-            background: #8338ec;
-            color: #fff;
-            font-size: 12px;
-            padding: 4px 10px;
-            border-radius: 20px;
-            border: 2px solid #fff;
-            transform: rotate(8deg);
-            box-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+            top: -16px;
+            left: -16px;
+            right: -16px;
+            bottom: -16px;
+            border: 2px dashed var(--flower-color);
+            pointer-events: none;
+            opacity: 0.65;
         }
 
-        .footer-note {
-            text-align: center;
-            margin-top: 30px;
-            font-size: 13px;
-            color: #adb5bd;
-            border-top: 2px dashed #dee2e6;
-            padding-top: 15px;
+        .sticker-top-left-spiral {
+            position: absolute;
+            top: -130px;
+            left: -300px;
+            width: 400px;
+            height: 400px;
+            z-index: 5;
+            pointer-events: none;
+        }
+
+        .sticker-bottom-left-group {
+            position: absolute;
+            bottom: -20px;
+            left: -35px;
+            z-index: 25;
+            pointer-events: none;
+        }
+
+        .teal-spiral-bl {
+            position: absolute;
+            bottom: 40px;
+            left: -10px;
+            width: 140px;
+            height: 140px;
+            z-index: 1;
+        }
+
+        .yellow-star-bl {
+            position: absolute;
+            bottom: 145px;
+            left: 60px;
+            width: 65px;
+            height: 65px;
+            z-index: 3;
+            transform: rotate(-10deg);
+            filter: drop-shadow(2px 3px 2px rgba(0,0,0,0.3));
+        }
+
+        .ladybug-bl {
+            position: relative;
+            width: 165px;
+            height: 165px;
+            z-index: 4;
+            transform: rotate(-18deg);
+            filter: drop-shadow(5px 10px 15px rgba(0,0,0,0.5));
+        }
+
+        .sticker-top-right-group {
+            position: absolute;
+            top: -25px;
+            right: -25px;
+            z-index: 25;
+            pointer-events: none;
+        }
+
+        .black-swirl-star {
+            width: 130px;
+            height: 130px;
+            transform: rotate(18deg);
+            filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.4));
+        }
+
+        .teal-star-tr {
+            position: absolute;
+            top: 65px;
+            right: -15px;
+            width: 62px;
+            height: 62px;
+            transform: rotate(-12deg);
+            filter: drop-shadow(2px 3px 4px rgba(0,0,0,0.3));
+        }
+
+        .dragonfly-br {
+            position: absolute;
+            bottom: -35px;
+            right: -35px;
+            width: 220px;
+            height: 220px;
+            z-index: 30;
+            transform: rotate(-15deg);
+            filter: drop-shadow(6px 12px 14px rgba(0,0,0,0.55));
+            pointer-events: none;
+        }
+
+        .handwritten-text {
+            font-family: 'Caveat', cursive;
+        }
+
+        .typewriter-font {
+            font-family: 'Special Elite', cursive;
+        }
+
+        .norm-tab {
+            background: rgba(45, 28, 35, 0.6);
+            border: 1px solid rgba(243, 235, 216, 0.3);
+            color: var(--cream-text);
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .norm-tab:hover {
+            background: rgba(217, 112, 130, 0.4);
+            border-color: var(--cream-text);
+        }
+
+        .norm-tab.active {
+            background: var(--star-yellow);
+            color: #2b1f0c;
+            font-weight: bold;
+            border-color: #ffffff;
+            box-shadow: 2px 2px 0px rgba(0,0,0,0.4);
+        }
+
+        .content-box {
+            background: rgba(40, 25, 30, 0.55);
+            border: 1px dashed rgba(243, 235, 216, 0.35);
+            border-radius: 6px;
+            padding: 1.5rem;
+            backdrop-filter: blur(2px);
+            min-height: 210px;
+            position: relative;
+            transition: opacity 0.15s ease-in-out;
+        }
+
+        .rejected-stamp {
+            display: inline-block;
+            border: 2px solid var(--accent-pink);
+            color: var(--accent-pink);
+            font-family: 'Special Elite', cursive;
+            padding: 2px 10px;
+            font-size: 0.8rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transform: rotate(-4deg);
+            border-radius: 3px;
+        }
+
+        @media (max-width: 768px) {
+            .mauve-card {
+                padding: 1.5rem 1rem;
+                border-width: 14px;
+                min-height: 420px;
+            }
+            .sticker-top-left-spiral { width: 140px; height: 140px; top: -15px; left: -20px; }
+            .ladybug-bl { width: 110px; height: 110px; }
+            .dragonfly-br { width: 150px; height: 150px; right: -25px; bottom: -20px; }
+            .black-swirl-star { width: 85px; height: 85px; }
+            .teal-star-tr { width: 45px; height: 45px; top: 45px; }
+            .stage-wrapper { padding: 30px 10px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="notebook-card">
-        
-        <!--header-->
-        <div class="title-badge">
-            🐞 ✦ SOCIETAL PRESSURES that dont make sense to me ✦
+    <div class="stage-wrapper">
+
+        <svg class="sticker-top-left-spiral" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 100 100 
+                     m 0, 0 
+                     a 12,12 0 0,1 12,12 
+                     a 24,24 0 0,1 -24,24 
+                     a 40,40 0 0,1 -40,-40 
+                     a 60,60 0 0,1 60,-60 
+                     a 82,82 0 0,1 82,82 
+                     a 104,104 0 0,1 -104,104" 
+                  stroke="#111111" stroke-width="30" stroke-linecap="round" fill="none"/>
+        </svg>
+
+        <div class="sticker-bottom-left-group">
+            <svg class="teal-spiral-bl" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 50 50 m 0,0 a 6,6 0 0,1 6,6 a 12,12 0 0,1 -12,12 a 20,20 0 0,1 -20,-20 a 30,30 0 0,1 30,-30 a 42,42 0 0,1 42,42 a 52,52 0 0,1 -52,52" 
+                      stroke="#75a29a" stroke-width="4.5" stroke-linecap="round"/>
+            </svg>
+
+            <svg class="yellow-star-bl" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="50,5 64,36 98,38 72,61 80,95 50,77 20,95 28,61 2,38 36,36" 
+                         fill="#f2cb51" stroke="#2d2208" stroke-width="4" stroke-linejoin="round"/>
+            </svg>
+
+            <svg class="ladybug-bl" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 50 80 L 15 55 M 150 80 L 185 55 M 45 110 L 10 110 M 155 110 L 190 110 M 50 140 L 20 170 M 150 140 L 180 170" 
+                      stroke="#141414" stroke-width="8" stroke-linecap="round"/>
+                <path d="M 85 38 L 72 15 M 115 38 L 128 15" stroke="#141414" stroke-width="5" stroke-linecap="round"/>
+                <circle cx="72" cy="15" r="3" fill="#141414"/>
+                <circle cx="128" cy="15" r="3" fill="#141414"/>
+                <circle cx="100" cy="50" r="28" fill="#1c1c1c"/>
+                <ellipse cx="84" cy="44" rx="7" ry="4" fill="#ffffff" transform="rotate(-20 84 44)"/>
+                <ellipse cx="116" cy="44" rx="7" ry="4" fill="#ffffff" transform="rotate(20 116 44)"/>
+                <ellipse cx="100" cy="122" rx="66" ry="62" fill="#0f0f0f"/>
+                <path d="M 100 62 C 38 62 30 122 36 168 C 65 180 96 174 98 62 Z" fill="#d93525"/>
+                <path d="M 100 62 C 162 62 170 122 164 168 C 135 180 104 174 102 62 Z" fill="#c22b1c"/>
+                <line x1="100" y1="62" x2="100" y2="176" stroke="#0f0f0f" stroke-width="4"/>
+                <circle cx="68" cy="96" r="11" fill="#141414"/>
+                <circle cx="132" cy="96" r="11" fill="#141414"/>
+                <circle cx="56" cy="138" r="10" fill="#141414"/>
+                <circle cx="144" cy="138" r="10" fill="#141414"/>
+                <circle cx="88" cy="158" r="8" fill="#141414"/>
+                <circle cx="112" cy="158" r="8" fill="#141414"/>
+                <path d="M 50 84 Q 62 70 82 72" stroke="#ff8e85" stroke-width="4" stroke-linecap="round" fill="none"/>
+            </svg>
         </div>
 
-        <p style="text-align: center; color: #6c757d; font-size: 15px; margin-bottom: 25px; font-style: italic;">
-            things society acts like are the absolute end of the world, but are actually not.
-        </p>
+        <div class="sticker-top-right-group">
+            <svg class="black-swirl-star" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 50 5 L 62 35 L 95 35 L 68 55 L 78 88 L 50 68 L 22 88 L 32 55 L 5 35 L 38 35 Z" 
+                      stroke="#111111" stroke-width="5" stroke-linejoin="round" fill="none"/>
+                <path d="M 50 18 L 58 38 L 78 38 L 62 50 L 68 70 L 50 58 L 32 70 L 38 50 L 22 38 L 42 38 Z" 
+                      stroke="#111111" stroke-width="3" stroke-linejoin="round" fill="none"/>
+            </svg>
+            <svg class="teal-star-tr" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="50,5 64,36 98,38 72,61 80,95 50,77 20,95 28,61 2,38 36,36" 
+                         fill="#75a29a" stroke="#1c302c" stroke-width="4" stroke-linejoin="round"/>
+            </svg>
+        </div>
 
-        <!--1-->
-        <div class="pressure-box">
-            <div class="sticker-corner">REJECTED</div>
-            <div class="pressure-title">1. "a major driver of liking someone is about how they look"</div>
-            <div class="pressure-desc">
-                people DO NOT choose their genetics, neither "not so pretty" nor "attractive as h" ones. visuals have a lot to do with our emotions, thats true. however, it doesnt mean seeking a specific tyoe of look in people, it means visuals tell us if something or someone is safe for us, by our brain checking the person's geometrical features and symmetry. so looks have something to do with attraction, but its an old adaptation of survival. just bc someone looks attractive to you doesnt mean you love them most ardently, its not that deep. sont eliminate potential lifelong friends or partners just bc they dont fit your "type" or "aesthetic". a face card is NOT THAT DEEP.
+        <svg class="dragonfly-br" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 100 70 C 50 18 10 28 15 48 C 20 68 75 75 100 75 Z" fill="#a2c4b8" fill-opacity="0.4" stroke="#253830" stroke-width="1.8"/>
+            <path d="M 100 70 C 150 18 190 28 185 48 C 180 68 125 75 100 75 Z" fill="#a2c4b8" fill-opacity="0.4" stroke="#253830" stroke-width="1.8"/>
+            <path d="M 100 78 C 55 42 25 62 30 80 C 35 94 80 84 100 80 Z" fill="#8cb3a5" fill-opacity="0.38" stroke="#253830" stroke-width="1.8"/>
+            <path d="M 100 78 C 145 42 175 62 170 80 C 165 94 120 84 100 80 Z" fill="#8cb3a5" fill-opacity="0.38" stroke="#253830" stroke-width="1.8"/>
+            <path d="M 32 44 Q 62 54 100 70 M 168 44 Q 138 54 100 70" stroke="#253830" stroke-width="1" stroke-dasharray="3,3"/>
+            <path d="M 46 68 Q 70 68 100 78 M 154 68 Q 130 68 100 78" stroke="#253830" stroke-width="1" stroke-dasharray="3,3"/>
+            <circle cx="100" cy="54" r="7" fill="#84c225"/>
+            <circle cx="95" cy="52" r="3.5" fill="#1b2e07"/>
+            <circle cx="105" cy="52" r="3.5" fill="#1b2e07"/>
+            <ellipse cx="100" cy="68" rx="8" ry="10" fill="#3c5912"/>
+            <line x1="100" y1="78" x2="100" y2="188" stroke="#283d09" stroke-width="6" stroke-linecap="round"/>
+            <line x1="100" y1="84" x2="100" y2="182" stroke="#7cbd1e" stroke-width="3" stroke-dasharray="6,4" stroke-linecap="round"/>
+        </svg>
+
+        <div class="mauve-card">
+
+            <div class="text-center">
+                <h1 class="typewriter-font text-2xl sm:text-3xl text-amber-100 tracking-wider mb-1">
+                    NO TO NORMS
+                </h1>
+                <p class="handwritten-text text-xl sm:text-2xl text-amber-200">
+                    ✦nonsensical✦
+                </p>
             </div>
-        </div>
 
-        <!--2-->
-        <div class="pressure-box">
-            <div class="sticker-corner" style="background: #3a86ff;">NOPE ✋</div>
-            <div class="pressure-title">2. "Being effortlessly 'cool' and emotionless"</div>
-            <div class="pressure-desc">
-                Society: <em>"Don't care too much, don't look too excited."</em> 
-                <br>Me: Caring intensely about random things, human connection, and little details is literally the only thing keeping reality interesting.
+            <div class="flex flex-wrap justify-center gap-2 my-4">
+                <button class="norm-tab active" onclick="switchNorm('t', this)">type</button>
+                <button class="norm-tab" onclick="switchNorm('n', this)">not fair</button>
+                <button class="norm-tab" onclick="switchNorm('u', this)">unhealthy</button>
             </div>
-        </div>
 
-        <!--3-->
-        <div class="pressure-box">
-            <div class="sticker-corner" style="background: #fb5607;">HARD PASS ✗</div>
-            <div class="pressure-title">3. "Every hobby has to be optimized for a career"</div>
-            <div class="pressure-desc">
-                Can't just build a weird little website, draw swirly stars, or code for fun without someone asking how it looks on a resume. Let people make things just because they spark joy!
+            <div class="content-box" id="normDisplay">
+                <div class="flex justify-between items-start mb-2">
+                    <span class="rejected-stamp">#01</span>
+                </div>
+                <h2 class="text-lg font-bold text-amber-200 font-mono mb-2">
+                    "a major driver of liking someone is about how they look"
+                </h2>
+                <p class="text-sm sm:text-base leading-relaxed text-stone-200 mb-3">
+                    people DO NOT choose their genetics, neither "not so pretty" nor "attractive as h" ones. visuals have a lot to do with our emotions, thats true. however, it doesnt mean seeking a specific type of look in people, it means visuals tell us whether something or someone is dangerous for us, by our brain checking the person's geometrical features and symmetry. so looks have something to do with attraction, but its an old adaptation of survival. hence, attraction IS NOT LOVE. just bc someone looks attractive to you doesnt mean you love them most ardently, its not that deep. dont eliminate potential lifelong friends or partners just bc they dont fit your "type" or "aesthetic". 
+                </p>
+                <p class="handwritten-text text-xl text-amber-300 border-t border-stone-500/40 pt-2">
+                    "a face card is NOT THAT DEEP."
+                </p>
             </div>
-        </div>
 
-        <!-- Footer -->
-        <div class="footer-note">
-            ✨ shipped in one cozy evening for crescent (and that telescope goal 🔭) 🐞
+
         </div>
 
     </div>
 
+    <script>
+        const normData = {
+            t: {
+                stamp: "#01",
+                title: '"a major driver of liking someone is about how they look"',
+                desc: 'people DO NOT choose their genetics, neither "not so pretty" nor "attractive as h" ones. visuals have a lot to do with our emotions, thats true. however, it doesnt mean seeking a specific type of look in people, it means visuals tell us whether something or someone is dangerous for us, by our brain checking the person s geometrical features and symmetry. so looks have something to do with attraction, but its an old adaptation of survival. hence, attraction IS NOT LOVE. just bc someone looks attractive to you doesnt mean you love them most ardently, its not that deep. dont eliminate potential lifelong friends or partners just bc they dont fit your "type" or "aesthetic".',
+                quote: '"a face card is NOT THAT DEEP."'
+            },
+            n: {
+                stamp: "#02",
+                title: '"testing on animals is a necessity, otherwise people may die (talks about makeup products)"',
+                desc: 'unless its a life or death situation, testing on any innocent living being has no acceptable aspect. even if it is vital, there are plenty other options to test on: human cells, tissues, organs and even human volunteers. or, technology is evolving, if we work on it, it shouldnt be IMPOSSIBLE to develop a simulator that can work on most of the computers, without requiring biological testing.',
+                quote: '"just because we had a "luckier" evolution doesnt give us the right to decide for other animals."'
+            },
+            u: {
+                stamp: "#03",
+                title: '"arguing is a sign of a healthy relationship"',
+                desc: "so basically you dont know how to communicate. real HEALTHY communication is having mutual respect, listening to eachother even when the other person's point is just so different than yours. you should jus tlisten and try to understand why they think the way they do. thats how the greatest ideas come to life, by discussing it. but if you turn discussion into yelling and tension, at some point you would just stop even trying to emphatize. and how can you have a relationship where two people dont even bother to understand eachother?",
+                quote: '"ARGUING IS NOT NORMAL. DONT NORMALIZE IT"'
+            }
+        };
+
+        function switchNorm(key, btnElement) {
+            document.querySelectorAll('.norm-tab').forEach(b => b.classList.remove('active'));
+            btnElement.classList.add('active');
+
+            const box = document.getElementById('normDisplay');
+            const data = normData[key];
+
+            box.style.opacity = '0.3';
+            setTimeout(() => {
+                box.innerHTML = `
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="rejected-stamp">${data.stamp}</span>
+                    </div>
+                    <h2 class="text-lg font-bold text-amber-200 font-mono mb-2">
+                        ${data.title}
+                    </h2>
+                    <p class="text-sm sm:text-base leading-relaxed text-stone-200 mb-3">
+                        ${data.desc}
+                    </p>
+                    <p class="handwritten-text text-xl text-amber-300 border-t border-stone-500/40 pt-2">
+                        ${data.quote}
+                    </p>
+                `;
+                box.style.opacity = '1';
+            }, 120);
+        }
+
+    </script>
 </body>
 </html>
